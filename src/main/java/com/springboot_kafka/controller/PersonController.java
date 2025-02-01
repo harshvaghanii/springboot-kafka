@@ -18,6 +18,11 @@ public class PersonController {
 
     private final KafkaProducer kafkaProducer;
 
+    @GetMapping
+    public ResponseEntity<String> test() {
+        return ResponseEntity.ok("This works!");
+    }
+
     @GetMapping(path = "/send")
     public ResponseEntity<Person> sendPerson() {
         // Creates a dummy Person and sends it to Kafka Queue
